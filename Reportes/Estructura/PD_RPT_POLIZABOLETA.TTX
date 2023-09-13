@@ -1,0 +1,9 @@
+; Field definition file for table: ADORecordset
+MTO_PRIREC	number		1.00
+NUM_POLIZA	string	10	string sample value
+GLS_DIRECCION	string	120	string sample value
+FEC_VIGENCIA	string	8	string sample value
+GLS_REGION	string	50	string sample value
+GLS_PROVINCIA	string	50	string sample value
+GLS_COMUNA	string	50	string sample value
+FEC_TRASPASO	string	8	string sample value

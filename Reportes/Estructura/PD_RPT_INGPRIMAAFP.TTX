@@ -1,0 +1,17 @@
+; Field definition file for table: ADORecordset
+AFP	string	200	string sample value
+MONEDA	string	200	string sample value
+GLS_NOMBEN	string	50	string sample value
+GLS_NOMSEGBEN	string	50	string sample value
+GLS_PATBEN	string	50	string sample value
+GLS_MATBEN	string	50	string sample value
+COD_TIPPENSION	string	5	string sample value
+MTO_PRIAFP	number		1.00
+MTO_PENSIONAFP	number		1.00
+MTO_PRICIA	number		1.00
+MTO_SUMPENSIONINF	number		1.00
+MTO_SUMPENSION	number		1.00
+MTO_SUMPENSIONAFP	number		1.00
+MTO_PRIREC	number		1.00
+MTO_PENSION	number		1.00
+COD_SCOMP	string	5	string sample value

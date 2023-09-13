@@ -1,0 +1,38 @@
+; Field definition file for table: ADORecordset
+NUM_IDENAFI	string	16	string sample value
+GLS_DIRECCION	string	50	string sample value
+NUM_PERPAGO	string	6	string sample value
+NUM_POLIZA	string	10	string sample value
+NUM_ORDEN	number		1.00
+FEC_PAGO	string	8	string sample value
+COD_VIAPAGO	string	5	string sample value
+NUM_IDENRECEPTOR	string	16	string sample value
+GLS_NOMRECEPTOR	string	25	string sample value
+GLS_NOMSEGRECEPTOR	string	25	string sample value
+GLS_PATRECEPTOR	string	20	string sample value
+GLS_MATRECEPTOR	string	20	string sample value
+COD_TIPRECEPTOR	string	1	string sample value
+MTO_HABER	number		1.00
+MTO_DESCUENTO	number		1.00
+MTO_LIQPAGAR	number		1.00
+COD_MONEDA	string	5	string sample value
+NUM_IDENBEN	string	16	string sample value
+GLS_NOMBEN	string	20	string sample value
+GLS_NOMSEGBEN	string	20	string sample value
+GLS_PATBEN	string	20	string sample value
+GLS_MATBEN	string	20	string sample value
+TIPDOC	string	10	string sample value
+GLS_SUCURSAL	string	50	string sample value
+GLS_COMUNA	string	50	string sample value
+GLS_PROVINCIA	string	50	string sample value
+GLS_REGION	string	50	string sample value
+NOM_ASEGURADO	string	83	string sample value
+DOC_ASEGURADO	string	16	string sample value
+TIPO_DOC_ASEGURADO	string	10	string sample value
+TIPO_PENSION	string	50	string sample value
+TIPO_PAGO	string	50	string sample value
+AFP	string	50	string sample value
+TUTOR	string	88	string sample value
+COD_SCOMP	string	10	string sample value
+DESC_MONEDA_AJUSTE	string	50	string sample value
+GLS_VEJEZ	string	50	string sample value

@@ -1,0 +1,13 @@
+; Field definition file for table: ADORecordset
+NUM_POLIZA	string	10	string sample value
+NUM_ENDOSO	number		1.00
+GLS_DIRECCION	string	120	string sample value
+MTO_PRIUNI	number		1.00
+GLS_NACIONALIDAD	string	50	string sample value
+FEC_INIPENCIA	string	8	string sample value
+FEC_FALLBEN	string	8	string sample value
+GLS_COMUNA	string	50	string sample value
+GLS_PROVINCIA	string	50	string sample value
+GLS_REGION	string	50	string sample value
+COD_TIPPENSION	string	5	string sample value
+FEC_CREA	string	8	string sample value

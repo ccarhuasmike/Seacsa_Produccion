@@ -1,0 +1,13 @@
+; Field definition file for table: ADORecordset
+NUM_POLIZA	string	10	string sample value
+NOMBRES	string	203	string sample value
+TIPOPEN	string	200	string sample value
+MTO_PRITOTAL	number		1.00
+PRIMATRANF	number		1.00
+COMISION	number		1.00
+ASESOR	string	62	string sample value
+FEC_TRAS	datetime		Jan 5, 1994 1:23:45 PM
+MESANO	string	6	string sample value
+COD_CUSPP	string	12	string sample value
+AFP	string	200	string sample value
+FEC_INCORP_POLIZA	datetime		Jan 5, 1994 1:23:45 PM

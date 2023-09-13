@@ -1,0 +1,27 @@
+; Field definition file for table: ADORecordset
+NUM_POLIZA	string	10	string sample value
+FEC_TRAPAGOPEN	string	8	string sample value
+COD_TIPPENSION	string	50	string sample value
+COD_CUSPP	string	12	string sample value
+FEC_VIGENCIA	string	8	string sample value
+COD_TIPREN	string	50	string sample value
+NUM_MESDIF	number		1.00
+GLS_ELEMENTO	string	50	string sample value
+COD_MODALIDAD	string	5	string sample value
+NUM_MESGAR	number		1.00
+MTO_PENSION	number		1.00
+MTO_VALREAJUSTEMEN	number		1.00
+MTO_VALREAJUSTETRI	number		1.00
+NUM_ORDEN	number		1.00
+GLS_NOMBEN	string	50	string sample value
+GLS_NOMSEGBEN	string	50	string sample value
+GLS_PATBEN	string	50	string sample value
+GLS_MATBEN	string	50	string sample value
+FEC_TRASPASO	string	8	string sample value
+MTO_PRIREC	number		1.00
+COD_SCOMP	string	10	string sample value
+AFP	string	50	string sample value
+GLS_NOMCOR	string	20	string sample value
+GLS_PATCOR	string	20	string sample value
+GLS_MATCOR	string	20	string sample value
+PRC_CORCOMREAL	number		1.00
