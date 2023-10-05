@@ -5,22 +5,22 @@ Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form Frm_CalPoliza 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Mantenedor de Pre-Pólizas."
-   ClientHeight    =   8265
+   ClientHeight    =   10140
    ClientLeft      =   3555
    ClientTop       =   1560
-   ClientWidth     =   10650
+   ClientWidth     =   10920
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8265
-   ScaleWidth      =   10650
+   ScaleHeight     =   10140
+   ScaleWidth      =   10920
    Begin VB.Frame Fra_Cabeza 
       Height          =   1215
       Left            =   150
       TabIndex        =   11
       Top             =   0
-      Width           =   9255
+      Width           =   9615
       Begin VB.TextBox Txt_NumPol 
          BackColor       =   &H00E0FFFF&
          Enabled         =   0   'False
@@ -121,11 +121,11 @@ Begin VB.Form Frm_CalPoliza
    Begin VB.Frame Fra_Operacion 
       Height          =   1095
       Index           =   0
-      Left            =   120
+      Left            =   0
       TabIndex        =   2
       ToolTipText     =   "Email de Bienvenida"
-      Top             =   7110
-      Width           =   10455
+      Top             =   8880
+      Width           =   10815
       Begin VB.CommandButton cmdEnviaCorreo 
          Caption         =   "Email Bienvenida"
          Height          =   675
@@ -235,33 +235,33 @@ Begin VB.Form Frm_CalPoliza
    Begin VB.CommandButton Cmd_Poliza 
       Caption         =   "&Pre-Póliza"
       Height          =   615
-      Left            =   9600
+      Left            =   9960
       Picture         =   "Frm_CalPoliza.frx":393E
       Style           =   1  'Graphical
       TabIndex        =   1
       ToolTipText     =   "Buscar Póliza"
-      Top             =   30
+      Top             =   60
       Width           =   900
    End
    Begin VB.CommandButton Cmd_Cotizacion 
       Caption         =   "&Cotizacion"
       Height          =   585
-      Left            =   9600
+      Left            =   9960
       Picture         =   "Frm_CalPoliza.frx":3FF8
       Style           =   1  'Graphical
       TabIndex        =   0
       ToolTipText     =   "Buscar Cotización"
-      Top             =   630
+      Top             =   660
       Width           =   900
    End
    Begin TabDlg.SSTab SSTab_Poliza 
-      Height          =   5775
+      Height          =   7455
       Left            =   120
       TabIndex        =   22
       Top             =   1350
-      Width           =   10455
-      _ExtentX        =   18441
-      _ExtentY        =   10186
+      Width           =   10695
+      _ExtentX        =   18865
+      _ExtentY        =   13150
       _Version        =   393216
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -289,10 +289,8 @@ Begin VB.Form Frm_CalPoliza
       TabCaption(2)   =   "Datos de Beneficiarios"
       TabPicture(2)   =   "Frm_CalPoliza.frx":46EA
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "framBancoCta"
-      Tab(2).Control(0).Enabled=   0   'False
-      Tab(2).Control(1)=   "Fra_Benef"
-      Tab(2).Control(1).Enabled=   0   'False
+      Tab(2).Control(0)=   "Fra_Benef"
+      Tab(2).Control(1)=   "framBancoCta"
       Tab(2).ControlCount=   2
       Begin VB.Frame Fra_Representante 
          Caption         =   "Representante"
@@ -1980,11 +1978,11 @@ Begin VB.Form Frm_CalPoliza
          End
       End
       Begin VB.Frame Fra_Afiliado 
-         Height          =   5295
+         Height          =   6975
          Left            =   120
          TabIndex        =   50
          Top             =   360
-         Width           =   10215
+         Width           =   10455
          Begin VB.Frame Fra_Direccion 
             Caption         =   "Dirección"
             BeginProperty Font 
@@ -2002,7 +2000,7 @@ Begin VB.Form Frm_CalPoliza
             TabIndex        =   51
             Top             =   120
             Visible         =   0   'False
-            Width           =   4875
+            Width           =   4995
             Begin VB.ComboBox Cmb_TipoVia 
                BackColor       =   &H00E0FFFF&
                Height          =   315
@@ -2298,15 +2296,57 @@ Begin VB.Form Frm_CalPoliza
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00800000&
-            Height          =   2565
-            Left            =   5330
+            Height          =   4245
+            Left            =   5280
             TabIndex        =   89
-            Top             =   2520
-            Width           =   4755
+            Top             =   2640
+            Width           =   4995
+            Begin VB.TextBox Txt_ApellidosSecundario 
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1530
+               TabIndex        =   313
+               Top             =   3920
+               Width           =   3350
+            End
+            Begin VB.TextBox Txt_NombreSecundario 
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1530
+               TabIndex        =   311
+               Top             =   3550
+               Width           =   3350
+            End
+            Begin VB.TextBox Txt_NroDocSecundario 
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1530
+               TabIndex        =   309
+               Top             =   3240
+               Width           =   3350
+            End
+            Begin VB.ComboBox Cmb_TipDoc 
+               Enabled         =   0   'False
+               Height          =   315
+               Left            =   1530
+               Style           =   2  'Dropdown List
+               TabIndex        =   307
+               Top             =   2880
+               Width           =   3350
+            End
+            Begin VB.ComboBox Cmb_ModTipCta 
+               Enabled         =   0   'False
+               Height          =   315
+               Left            =   1530
+               Style           =   2  'Dropdown List
+               TabIndex        =   305
+               Top             =   2520
+               Width           =   3350
+            End
             Begin VB.ComboBox cmb_MonCta 
                BackColor       =   &H00E0FFFF&
                Height          =   315
-               Left            =   1050
+               Left            =   1530
                Style           =   2  'Dropdown List
                TabIndex        =   292
                Top             =   1520
@@ -2314,7 +2354,7 @@ Begin VB.Form Frm_CalPoliza
             End
             Begin VB.TextBox Txt_NumCta 
                Height          =   315
-               Left            =   1050
+               Left            =   1530
                MaxLength       =   25
                TabIndex        =   95
                Top             =   1850
@@ -2323,7 +2363,7 @@ Begin VB.Form Frm_CalPoliza
             Begin VB.ComboBox Cmb_ViaPago 
                BackColor       =   &H00E0FFFF&
                Height          =   315
-               Left            =   1050
+               Left            =   1530
                Style           =   2  'Dropdown List
                TabIndex        =   94
                Top             =   240
@@ -2333,7 +2373,7 @@ Begin VB.Form Frm_CalPoliza
                BackColor       =   &H00E0FFFF&
                Height          =   315
                ItemData        =   "Frm_CalPoliza.frx":5632
-               Left            =   1050
+               Left            =   1530
                List            =   "Frm_CalPoliza.frx":5634
                Style           =   2  'Dropdown List
                TabIndex        =   93
@@ -2343,7 +2383,7 @@ Begin VB.Form Frm_CalPoliza
             Begin VB.ComboBox Cmb_TipCta 
                BackColor       =   &H00E0FFFF&
                Height          =   315
-               Left            =   1050
+               Left            =   1530
                Style           =   2  'Dropdown List
                TabIndex        =   92
                Top             =   1180
@@ -2352,7 +2392,7 @@ Begin VB.Form Frm_CalPoliza
             Begin VB.ComboBox Cmb_Bco 
                BackColor       =   &H00E0FFFF&
                Height          =   315
-               Left            =   1050
+               Left            =   1530
                Style           =   2  'Dropdown List
                TabIndex        =   91
                Top             =   850
@@ -2360,11 +2400,51 @@ Begin VB.Form Frm_CalPoliza
             End
             Begin VB.TextBox txt_CCI 
                Height          =   315
-               Left            =   1050
+               Left            =   1530
                MaxLength       =   30
                TabIndex        =   90
                Top             =   2160
                Width           =   3315
+            End
+            Begin VB.Label Label14 
+               Caption         =   "Apellidos"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   312
+               Top             =   3960
+               Width           =   1095
+            End
+            Begin VB.Label Label13 
+               Caption         =   "Nombres"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   310
+               Top             =   3600
+               Width           =   1215
+            End
+            Begin VB.Label Label12 
+               Caption         =   "Nro Doc."
+               Height          =   255
+               Left            =   120
+               TabIndex        =   308
+               Top             =   3240
+               Width           =   1215
+            End
+            Begin VB.Label Label11 
+               Caption         =   "Tip.Documento"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   306
+               Top             =   2880
+               Width           =   1215
+            End
+            Begin VB.Label Label10 
+               Caption         =   "Mod Tip Cuenta"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   304
+               Top             =   2520
+               Width           =   1215
             End
             Begin VB.Label Lbl_Nombre 
                Caption         =   "Mon. Cta."
@@ -3081,6 +3161,13 @@ Dim vlRutGrilla As String
 Dim vlEstPen As String
 'RRR
 Dim vlcod_tipcta, vlcod_monbco, vlCod_Banco, vlnum_ctabco As String
+'Inicio SMCCB 22/09/2023
+Dim vl_COD_MODTIPOCUENTA_MANC As String
+Dim vl_COD_TIPODOC_MANC As String
+Dim vl_NUM_DOC_MANC As String
+Dim vl_NOMBRE_MANC As String
+Dim vl_APELLIDO_MANC As String
+'Fin SMCCB 22/09/2023
 Dim vlBTipoEnvio As Boolean
 
 'VARIABLES DE BENEFICIARIO
@@ -3331,7 +3418,7 @@ Function flIniGrillaBen()
 On Error GoTo Err_IniGri
 
     Msf_GriAseg.Clear
-    Msf_GriAseg.Cols = 37
+    Msf_GriAseg.Cols = 42
     Msf_GriAseg.rows = 1
     Msf_GriAseg.FixedCols = 0
     Msf_GriAseg.Row = 0
@@ -3494,8 +3581,26 @@ On Error GoTo Err_IniGri
     Msf_GriAseg.ColWidth(36) = 1000
     Msf_GriAseg.Text = "Email"
 
- 'Fin GCP 16092021
-
+    'Fin GCP 16092021
+    Msf_GriAseg.Col = 37
+    Msf_GriAseg.ColWidth(37) = 1000
+    Msf_GriAseg.Text = "COD_MODTIPOCUENTA_MANC"
+    
+    Msf_GriAseg.Col = 38
+    Msf_GriAseg.ColWidth(38) = 1000
+    Msf_GriAseg.Text = "COD_TIPODOC_MANC"
+    
+    Msf_GriAseg.Col = 39
+    Msf_GriAseg.ColWidth(39) = 1000
+    Msf_GriAseg.Text = "NUM_DOC_MANC"
+    
+    Msf_GriAseg.Col = 40
+    Msf_GriAseg.ColWidth(40) = 1000
+    Msf_GriAseg.Text = "NOMBRE_MANC"
+    
+    Msf_GriAseg.Col = 41
+    Msf_GriAseg.ColWidth(41) = 1000
+    Msf_GriAseg.Text = "APELLIDO_MANC"
 
 Exit Function
 Err_IniGri:
@@ -4058,9 +4163,18 @@ On Error GoTo Err_CargaAfi
             Lbl_FecFallBen.Visible = True
         End If
         '*****
+        '09  SOBREVIVENCIA DE JUB. LEGAL
+        '10  SOBREVIVENCIA DE JUB. ANTICIPADA
+        '04  JUBILACION LEGAL - -habiltada
+        '05  JUBILACION ANTICIPADA - -habiltada
+        If Left(Trim(Lbl_TipPen.Caption), 2) = "09" Or Left(Trim(Lbl_TipPen.Caption), 2) = "10" Or Left(Trim(Lbl_TipPen.Caption), 2) = "04" Or Left(Trim(Lbl_TipPen.Caption), 2) = "05" Then
+            Cmb_ModTipCta.Enabled = False
+            Cmb_TipDoc.Enabled = False
+            Txt_NroDocSecundario.Enabled = False
+            Txt_NombreSecundario.Enabled = False
+            Txt_ApellidosSecundario.Enabled = False
+        End If
         
-       
-             
         If Not IsNull(vgRs!Cod_CauInv) Then Lbl_CauInv = Trim(vgRs!Cod_CauInv) & " - " & fgBuscarGlosaCauInv(vgRs!Cod_CauInv)
         If Not IsNull(vgRs!Cod_AFP) Then Lbl_Afp = Trim(vgRs!Cod_AFP) & " - " & fgBuscarGlosaElemento(vgCodTabla_AFP, vgRs!Cod_AFP)
 
@@ -4482,6 +4596,7 @@ On Error GoTo Err_CargaBen
     vlSql = vlSql & ",cod_estpension,prc_pensiongar,cod_tipcta, cod_monbco, cod_banco, num_ctabco, cod_nacionalidad, num_cuenta_cci"
     'GCP-FRACTAL 11042019
     vlSql = vlSql & ",GLS_FONO, GLS_FONO2, nvl(CONS_TRAINFO,'0') as CONS_TRAINFO, nvl(CONS_DATCOMER,'0') as CONS_DATCOMER, gls_correoben "
+    vlSql = vlSql & ",COD_MODTIPOCUENTA_MANC , COD_TIPODOC_MANC, NUM_DOC_MANC, NOMBRE_MANC, APELLIDO_MANC "
     vlSql = vlSql & " FROM pd_tmae_oripolben WHERE "
     vlSql = vlSql & "num_poliza = '" & iNumPol & "' "
     vlSql = vlSql & "ORDER BY num_orden ASC "
@@ -4560,6 +4675,33 @@ On Error GoTo Err_CargaBen
             vl_ConTratDatos_Ben = IIf(IsNull(vgRs!CONS_TRAINFO), "", Trim(vgRs!CONS_TRAINFO))
             vl_ConUsoDatosCom_Ben = IIf(IsNull(vgRs!CONS_DATCOMER), "", Trim(vgRs!CONS_DATCOMER))
             vl_Correo_Ben = IIf(IsNull(vgRs!Gls_CorreoBen), "", Trim(vgRs!Gls_CorreoBen))
+            'Inicio SMCCB 22/09/2023
+            vl_COD_MODTIPOCUENTA_MANC = IIf(IsNull(vgRs!COD_MODTIPOCUENTA_MANC), "", Trim(vgRs!COD_MODTIPOCUENTA_MANC))
+            vl_COD_TIPODOC_MANC = IIf(IsNull(vgRs!COD_TIPODOC_MANC), "", Trim(vgRs!COD_TIPODOC_MANC))
+            vl_NUM_DOC_MANC = IIf(IsNull(vgRs!NUM_DOC_MANC), "", Trim(vgRs!NUM_DOC_MANC))
+            vl_NOMBRE_MANC = IIf(IsNull(vgRs!NOMBRE_MANC), "", Trim(vgRs!NOMBRE_MANC))
+            vl_APELLIDO_MANC = IIf(IsNull(vgRs!APELLIDO_MANC), "", Trim(vgRs!APELLIDO_MANC))
+            If Trim(vgRs!Num_Orden) = "1" Then
+                If Not IsNull(vl_COD_MODTIPOCUENTA_MANC) Then
+                    Call fgBuscaPos(Cmb_ModTipCta, vl_COD_MODTIPOCUENTA_MANC)
+                    If vl_COD_MODTIPOCUENTA_MANC = "00" Then
+                        Cmb_TipDoc.Enabled = False
+                        Txt_NroDocSecundario.Enabled = False
+                        Txt_NombreSecundario.Enabled = False
+                        Txt_ApellidosSecundario.Enabled = False
+                    Else
+                        Cmb_TipDoc.Enabled = True
+                        Txt_NroDocSecundario.Enabled = True
+                        Txt_NombreSecundario.Enabled = True
+                        Txt_ApellidosSecundario.Enabled = True
+                    End If
+                End If
+                If Not IsNull(vl_COD_TIPODOC_MANC) Then Call fgBuscaPos(Cmb_TipDoc, vl_COD_TIPODOC_MANC)
+                If Not IsNull(vl_NUM_DOC_MANC) Then Txt_NroDocSecundario = vl_NUM_DOC_MANC
+                If Not IsNull(vl_NOMBRE_MANC) Then Txt_NombreSecundario = vl_NOMBRE_MANC
+                If Not IsNull(vl_APELLIDO_MANC) Then Txt_ApellidosSecundario = vl_APELLIDO_MANC
+            End If
+            'Fin SMCCB 22/09/2023
             'FIN GCP-FRACTAL 11042019
             
         '-- End   : Modify by : ricardo.huerta
@@ -4586,7 +4728,9 @@ On Error GoTo Err_CargaBen
                     Trim(vgRs!Num_Orden) & vbTab & vlEstPen _
                     & vbTab & vlPrcPensionGar & vbTab & vlPrcPensionLeg _
                     & vbTab & vlcod_tipcta & vbTab & vlcod_monbco & vbTab & vlCod_Banco & vbTab & vlnum_ctabco & vbTab & vl_nacionalidadben & vbTab & vl_nacionalidadben_descripcion & vbTab & vlnum_CCI _
-                    & vbTab & vl_Fono1_Ben & vbTab & vl_Fono2_Ben & vbTab & vl_ConTratDatos_Ben & vbTab & vl_ConUsoDatosCom_Ben & vbTab & vl_Correo_Ben
+                    & vbTab & vl_Fono1_Ben & vbTab & vl_Fono2_Ben & vbTab & vl_ConTratDatos_Ben & vbTab & vl_ConUsoDatosCom_Ben & vbTab & vl_Correo_Ben _
+                    & vbTab & vl_COD_MODTIPOCUENTA_MANC & vbTab & vl_COD_TIPODOC_MANC & vbTab & vl_NOMBRE_MANC & vbTab & vl_NOMBRE_MANC & vbTab & vl_APELLIDO_MANC 'Inicio/Fin SMCCB 22/09/2023
+                    
         vgRs.MoveNext
     Wend
     
@@ -4785,6 +4929,19 @@ On Error GoTo Err_flCargaCotCarpAfilPol
             Txt_FecFallBen.Visible = False
             Lbl_FecFallBen.Visible = True
         End If
+        
+        '09  SOBREVIVENCIA DE JUB. LEGAL
+        '10  SOBREVIVENCIA DE JUB. ANTICIPADA
+        '04  JUBILACION LEGAL - -habiltada
+        '05  JUBILACION ANTICIPADA - -habiltada
+        If vgRs!Cod_TipPension = "09" Or vgRs!Cod_TipPension = "10" Or vgRs!Cod_TipPension = "04" Or vgRs!Cod_TipPension = "05" Then
+            Cmb_ModTipCta.Enabled = True
+'            Cmb_TipDoc.Enabled = True
+'            Txt_NroDocSecundario.Enabled = True
+'            Txt_NombreSecundario.Enabled = True
+'            Txt_ApellidosSecundario.Enabled = True
+        End If
+        
         '*****
         If Not IsNull(vgRs!Cod_CauInv) Then Lbl_CauInv = Trim(vgRs!Cod_CauInv) & " - " & fgBuscarGlosaCauInv(vgRs!Cod_CauInv)
         If Not IsNull(vgRs!Cod_AFP) Then Lbl_Afp = Trim(vgRs!Cod_AFP) & " - " & fgBuscarGlosaElemento(vgCodTabla_AFP, vgRs!Cod_AFP)
@@ -6073,6 +6230,22 @@ Function flGrabaBeneficiario()
         Msf_GriAseg.Col = 36
         vl_CorreoBen = Trim(Msf_GriAseg.Text)
         
+  
+'        Msf_GriAseg.Col = 37
+'        vl_COD_MODTIPOCUENTA_MANC = Trim(Msf_GriAseg.Text)
+'
+'        Msf_GriAseg.Col = 38
+'        vl_COD_TIPODOC_MANC = Trim(Msf_GriAseg.Text)
+'
+'        Msf_GriAseg.Col = 39
+'        vl_NUM_DOC_MANC = Trim(Msf_GriAseg.Text)
+'
+'        Msf_GriAseg.Col = 40
+'        vl_NOMBRE_MANC = Trim(Msf_GriAseg.Text)
+'
+'        Msf_GriAseg.Col = 41
+'        vl_APELLIDO_MANC = Trim(Msf_GriAseg.Text)
+        
         
  
 If (vgBotonEscogido <> "R") Then
@@ -6155,6 +6328,8 @@ If (vgBotonEscogido <> "R") Then
 'F--- ABV 10/08/2007 ---
         End If
 Else
+
+
     'Obtener los datos desde la Estructura de Beneficiarios
         Msf_GriAseg.Col = 1
         vlCodPar = Trim(Msf_GriAseg.Text)
@@ -6496,7 +6671,12 @@ VlConUsoDatosCom_Afil = Trim(chkConUsoDatosCom_Afil.Value)
         vlSql = vlSql & ", cod_nacionalidad, num_cuenta_cci "
         vlSql = vlSql & ", GLS_FONO, GLS_FONO2, CONS_TRAINFO, CONS_DATCOMER,GLS_CORREOBEN "
         'FIN GCP-FRACTAL 11042019
+        'Inicio SMCCB 22/09/2023
+        If str(Msf_GriAseg.Text) = 1 And fgObtenerCodigo_TextoCompuesto(Cmb_ModTipCta.Text) = "01" Then
+            vlSql = vlSql & ", COD_MODTIPOCUENTA_MANC , COD_TIPODOC_MANC, NUM_DOC_MANC, NOMBRE_MANC, APELLIDO_MANC "
+        End If
         
+        'Fin SMCCB 22/09/2023
         'RRR
         vlSql = vlSql & ") values ("
         vlSql = vlSql & "'" & Trim(vlNumPol) & "', "
@@ -6574,9 +6754,21 @@ VlConUsoDatosCom_Afil = Trim(chkConUsoDatosCom_Afil.Value)
           vlSql = vlSql & ",'" & vl_ConUsoDatosCom_Ben & "' "
        End If
           
-          vlSql = vlSql & ",'" & vl_CorreoBen & "' "
-     
-     
+        vlSql = vlSql & ",'" & vl_CorreoBen & "' "
+        'Inicio SMCCB 22/09/2023
+        '        vlSql = vlSql & ",'" & vl_COD_MODTIPOCUENTA_MANC & "' "
+        '        vlSql = vlSql & ",'" & vl_COD_TIPODOC_MANC & "' "
+        '        vlSql = vlSql & ",'" & vl_NUM_DOC_MANC & "' "
+        '        vlSql = vlSql & ",'" & vl_NOMBRE_MANC & "' "
+        '        vlSql = vlSql & ",'" & vl_APELLIDO_MANC & "' "
+        If str(Msf_GriAseg.Text) = 1 And fgObtenerCodigo_TextoCompuesto(Cmb_ModTipCta.Text) = "01" Then
+            vlSql = vlSql & ",'" & fgObtenerCodigo_TextoCompuesto(Cmb_ModTipCta.Text) & "' "
+            vlSql = vlSql & ",'" & fgObtenerCodigo_TextoCompuesto(Cmb_TipDoc.Text) & "' "
+            vlSql = vlSql & ",'" & Txt_NroDocSecundario.Text & "' "
+            vlSql = vlSql & ",'" & Txt_NombreSecundario.Text & "' "
+            vlSql = vlSql & ",'" & Txt_ApellidosSecundario.Text & "' "
+        End If
+        'Fin SMCCB 22/09/2023
         'RRR
         vlSql = vlSql & ") "
         vgConectarBD.Execute (vlSql)
@@ -7170,8 +7362,13 @@ End If
         vlSql = vlSql & ", cod_nacionalidad, num_cuenta_cci"
         'GCP-FRACTAL 11042019
         vlSql = vlSql & ", GLS_FONO, GLS_FONO2, CONS_TRAINFO, CONS_DATCOMER,gls_correoben  "
+        'RRR
+        'Inicio SMCCB 22/09/2023
+        If str(Msf_GriAseg.Text) = 1 And fgObtenerCodigo_TextoCompuesto(Cmb_ModTipCta.Text) = "01" Then
+            vlSql = vlSql & ", COD_MODTIPOCUENTA_MANC , COD_TIPODOC_MANC, NUM_DOC_MANC, NOMBRE_MANC, APELLIDO_MANC "
+        End If
         
-'RRR
+        'Fin SMCCB 22/09/2023
         vlSql = vlSql & ") values ("
         vlSql = vlSql & "'" & Trim(vlNumPol) & "', "
         Msf_GriAseg.Col = 0
@@ -7239,7 +7436,6 @@ End If
         
         If Trim(vlCodPar) = "99" Then
              vlSql = vlSql & ",'" & vlNum_Cuenta_CCI & "' "
-             
             vlSql = vlSql & ",'" & vl_Fono & "' "
             vlSql = vlSql & ",'" & vl_Fono2_Afil & "' "
             vlSql = vlSql & ",'" & VlConTratDatos_Afil & "' "
@@ -7247,21 +7443,23 @@ End If
             vlSql = vlSql & ",'" & vl_Correo_afil & "' "
    
         Else
-     
             vlSql = vlSql & ",'" & vlnum_CCI & "' "
-       
             vlSql = vlSql & ",'" & vl_Fono1_Ben & "' "
             vlSql = vlSql & ",'" & vl_Fono2_Ben & "' "
             vlSql = vlSql & ",'" & vl_ConTratDatos_Ben & "' "
             vlSql = vlSql & ",'" & vl_ConUsoDatosCom_Ben & "' "
             vlSql = vlSql & ",'" & vl_Correo_Ben & "' "
-            
-            
-            
+        End If
+        'Inicio SMCCB 22/09/2023
+        If str(Msf_GriAseg.Text) = 1 And fgObtenerCodigo_TextoCompuesto(Cmb_ModTipCta.Text) = "01" Then
+            vlSql = vlSql & ",'" & fgObtenerCodigo_TextoCompuesto(Cmb_ModTipCta.Text) & "' "
+            vlSql = vlSql & ",'" & fgObtenerCodigo_TextoCompuesto(Cmb_TipDoc.Text) & "' "
+            vlSql = vlSql & ",'" & Txt_NroDocSecundario.Text & "' "
+            vlSql = vlSql & ",'" & Txt_NombreSecundario.Text & "' "
+            vlSql = vlSql & ",'" & Txt_ApellidosSecundario.Text & "' "
         End If
         
-       
-      
+        'Fin SMCCB 22/09/2023
         'RRR
         vlSql = vlSql & ") "
         vgConectarBD.Execute (vlSql)
@@ -9851,6 +10049,22 @@ If (KeyAscii = 13) Then
 End If
 End Sub
 
+'Inicio SMCCB 22/09/2023
+Private Sub Cmb_ModTipCta_Click()
+  If Left(Trim(Cmb_ModTipCta.Text), 2) = "01" Then
+    Cmb_TipDoc.Enabled = True
+    Txt_NroDocSecundario.Enabled = True
+    Txt_NombreSecundario.Enabled = True
+    Txt_ApellidosSecundario.Enabled = True
+  Else
+    Cmb_TipDoc.Enabled = False
+    Txt_NroDocSecundario.Enabled = False
+    Txt_NombreSecundario.Enabled = False
+    Txt_ApellidosSecundario.Enabled = False
+  End If
+End Sub
+'Fin SMCCB 22/09/2023
+
 Private Sub Cmb_TipIdRep_KeyPress(KeyAscii As Integer)
     If KeyAscii = 13 Then
         Txt_NumIdRep.SetFocus
@@ -10182,16 +10396,17 @@ Dim rs As ADODB.Recordset
 On Error GoTo Err_CreaPol
 
     'Integracion GobiernoDeDatos(Se invoca al servicio de Validacion de gestor de clientes)_
-    Dim RpstServicio As Boolean
-    For vlJ = 1 To (Msf_GriAseg.rows - 1)
-        Msf_GriAseg.Row = vlJ
-        Dim Mensaje As String
-        RpstServicio = EnviarGestorCliente("Validar", Mensaje)
-        If (RpstServicio = False) Then
-           MsgBox Mensaje & " Beneficiario #" & " " & vlJ
-           Exit Sub
-        End If
-    Next vlJ
+    'Descomentar - mike
+'    Dim RpstServicio As Boolean
+'    For vlJ = 1 To (Msf_GriAseg.rows - 1)
+'        Msf_GriAseg.Row = vlJ
+'        Dim Mensaje As String
+'        RpstServicio = EnviarGestorCliente("Validar", Mensaje)
+'        If (RpstServicio = False) Then
+'           MsgBox Mensaje & " Beneficiario #" & " " & vlJ
+'           Exit Sub
+'        End If
+'    Next vlJ
     'Fin Integracion GobiernoDeDatos_
     
 
@@ -10289,10 +10504,11 @@ On Error GoTo Err_CreaPol
     End If
     
     'Valida que los beneficiarios de la grilla tengan todos los datos
-    If flValidaBenGrilla = False Then
-        Screen.MousePointer = 0
-        Exit Sub
-    End If
+    'Descomentar - mike
+'    If flValidaBenGrilla = False Then
+'        Screen.MousePointer = 0
+'        Exit Sub
+'    End If
     
     vlCodTipPen = Trim(Mid(Lbl_TipPen, 1, (InStr(1, Lbl_TipPen, "-") - 1)))
 
@@ -10407,21 +10623,23 @@ On Error GoTo Err_CreaPol
     
     'Integracion GobiernoDeDatos(Se envia y agrega la data al gestor de clientes)_
    Dim Error As Integer
-    For vlJ = 1 To (Msf_GriAseg.rows - 1)
-    Msf_GriAseg.Row = vlJ
-    RpstServicio = EnviarGestorCliente("Agregar", Mensaje)
-    If (RpstServicio = False) Then
-       Error = 1
-       MsgBox Mensaje & " Beneficiario #" & " " & vlJ
-    End If
-    Next vlJ
+   'Descomentar - mike
+'    For vlJ = 1 To (Msf_GriAseg.rows - 1)
+'    Msf_GriAseg.Row = vlJ
+'    RpstServicio = EnviarGestorCliente("Agregar", Mensaje)
+'    If (RpstServicio = False) Then
+'       Error = 1
+'       MsgBox Mensaje & " Beneficiario #" & " " & vlJ
+'    End If
+'    Next vlJ
     
     If vlSw = True And Error <> 1 Then
     vlBotonEscogido = "P"
     'Fin Integracion GobiernoDeDatos_
        'ejecutar la transaccion
-        'vgConectarBD.CommitTrans
-        vgConectarBD.RollbackTrans
+       ''Descomentar - mike
+        vgConectarBD.CommitTrans
+        'vgConectarBD.RollbackTrans
     
        'cerrar la transaccion
         vgConectarBD.Close
@@ -11089,7 +11307,10 @@ On Error GoTo Err_Ejec
     SSTab_Poliza.Tab = 0
     Frm_CalPoliza.Top = 0
     Frm_CalPoliza.Left = 0
-    
+    'Inicio SMCCB 22/09/2023
+    Call fgComboGeneral(vgCodTabla_ModTipCta, Cmb_ModTipCta)
+    Call fgComboTipoIdentificacion(Cmb_TipDoc)
+    'Fin SMCCB 22/09/2023
     Call fgComboGeneral(vgCodTabla_InsSal, Cmb_Salud)
 '    Call fgComboGeneral(vgCodTabla_ViaPago, Cmb_ViaPago)
     Call fgComboGeneral(vgCodTabla_TipCta, Cmb_TipCta)

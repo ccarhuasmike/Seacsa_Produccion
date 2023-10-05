@@ -1,19 +1,19 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.1#0"; "Crystl32.OCX"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form Frm_CalInfSBS 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Informes para la SBS."
-   ClientHeight    =   4590
+   ClientHeight    =   4620
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   8070
+   ClientWidth     =   8130
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   4590
-   ScaleWidth      =   8070
+   ScaleHeight     =   4620
+   ScaleWidth      =   8130
    Begin VB.Frame Fra_Operacion 
       Height          =   1095
       Index           =   0
@@ -616,8 +616,8 @@ On Error GoTo Err_flInformeAnexoSVS
 'F--- ABV 23/11/2007 ---
     
         'Prima Única - Transformar de acuerdo al Tipo de Moneda de la Pensión
-        If (vlRegistro!mto_priuni <> 0) Then
-            vlMtoPriUni = vlRegistro!mto_priuni / vlRegistro!Mto_ValMoneda
+        If (vlRegistro!MTO_PRIUNI <> 0) Then
+            vlMtoPriUni = vlRegistro!MTO_PRIUNI / vlRegistro!Mto_ValMoneda
         Else
             vlMtoPriUni = 0
         End If
@@ -856,10 +856,10 @@ On Error GoTo Err_Buscar
 '        Sql = Sql & "'" & vgRs!fec_pripago & "',"
         Sql = Sql & "'" & vgRs!fec_inipencia & "',"
 'F--- ABV 23/11/2007 ---
-        Sql = Sql & " " & Str(vgRs!mto_priuni) & ","
+        Sql = Sql & " " & str(vgRs!MTO_PRIUNI) & ","
         Sql = Sql & "'" & vgRs!Ind_Cob & "',"
         Sql = Sql & "'" & vgRs!Gls_Moneda & "',"
-        Sql = Sql & " " & Str(vgRs!Mto_ValMoneda) & ","
+        Sql = Sql & " " & str(vgRs!Mto_ValMoneda) & ","
         Sql = Sql & "'" & vgRs!Cod_TipRen & "',"
         Sql = Sql & " " & vgRs!Num_MesDif & ","
         Sql = Sql & "'" & vgRs!Cod_Modalidad & "',"
@@ -867,9 +867,9 @@ On Error GoTo Err_Buscar
         Sql = Sql & "'" & vgRs!Cod_CoberCon & "',"
         Sql = Sql & "'" & vgRs!Cod_DerCre & "',"
         Sql = Sql & "'" & vgRs!Cod_DerGra & "',"
-        Sql = Sql & " " & Str(vgRs!Prc_TasaCe) & ","
-        Sql = Sql & " " & Str(vgRs!Prc_TasaVta) & ","
-        Sql = Sql & " " & Str(vgRs!Mto_Pension) & ","
+        Sql = Sql & " " & str(vgRs!Prc_TasaCe) & ","
+        Sql = Sql & " " & str(vgRs!Prc_TasaVta) & ","
+        Sql = Sql & " " & str(vgRs!Mto_Pension) & ","
         Sql = Sql & "'" & Trim(vgRs!GLS_AFP) & "',"
         If (vgRs!Cod_TipPension = "04") Or (vgRs!Cod_TipPension = "05") Then
             Sql = Sql & "'" & Trim(vgRs!GLS_TIPPENSION) & "',"
@@ -1064,7 +1064,7 @@ Dim r_temp As ADODB.Recordset
             objRsRpt.Fields("COD_CUSPP").Value = Trim(r_temp!Cod_Cuspp)
             objRsRpt.Fields("FEC_DEV").Value = Trim(r_temp!Fec_Dev)
             objRsRpt.Fields("FEC_ACEPTA").Value = Trim(r_temp!Fec_Acepta)
-            objRsRpt.Fields("MTO_PRIUNI").Value = r_temp!mto_priuni
+            objRsRpt.Fields("MTO_PRIUNI").Value = r_temp!MTO_PRIUNI
             objRsRpt.Fields("MTO_VALMONEDA").Value = r_temp!Mto_ValMoneda
             objRsRpt.Fields("NUM_MESDIF").Value = Trim(r_temp!Num_MesDif)
             objRsRpt.Fields("NUM_MESGAR").Value = Trim(r_temp!Num_MesGar)

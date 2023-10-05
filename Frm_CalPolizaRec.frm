@@ -4,16 +4,16 @@ Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Begin VB.Form Frm_CalPolizaRec 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Recálculo de Pólizas."
-   ClientHeight    =   8040
+   ClientHeight    =   8010
    ClientLeft      =   2325
    ClientTop       =   2295
-   ClientWidth     =   10665
+   ClientWidth     =   10635
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8040
-   ScaleWidth      =   10665
+   ScaleHeight     =   8010
+   ScaleWidth      =   10635
    Begin VB.Frame Fra_Cabeza 
       Height          =   1485
       Left            =   120

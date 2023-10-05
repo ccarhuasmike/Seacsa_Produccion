@@ -164,6 +164,7 @@ Global Const vgCodTabla_SitInv = "SI"      'Situación de Invalidez
 Global Const vgCodTabla_TipBono = "TB"      'Tipo de Bono
 Global Const vgCodTabla_TipCor = "TC"      'Tipo de Corredor
 Global Const vgCodTabla_TipCta = "TCT"     'Tipo de Cuenta de Depósito
+Global Const vgCodTabla_ModTipCta = "TCC"     'Modalidad Tipo de Cuenta de Depósito
 Global Const vgCodTabla_TipDoc = "TD"      'Tipo de Documento
 Global Const vgCodTabla_TipPagTem = "TE"   'Tipo de Pago de Pensiones Temporales
 Global Const vgCodTabla_TipEnd = "TEN"     'Tipo de Endoso
@@ -3806,7 +3807,7 @@ On Error GoTo Err_Main
     If (vgNombreUsuario = "DESCONOCIDO") Then
         vgMensaje = "La Entrada 'Usuario', no está definida en el Archivo AdmPrevBD.Ini" & vbCrLf
     End If
-    vgNombreUsuario = fgDesPassword(vgNombreUsuario)
+    vgNombreUsuario = "prorv_user" ' fgDesPassword(vgNombreUsuario)
     
     'Valida Si Existe Nombre de la entrada para definir Password de SisSin
     vgPassWord = fgGetPrivateIni(lpAppName, "Password", lpFileName)
@@ -3820,7 +3821,7 @@ On Error GoTo Err_Main
     End If
     'vgPassWord = fgDesPassword(vgPassWord)
     'vgPassWord = "rentcalidad64"
-    vgPassWord = "protecta"
+    vgPassWord = "rentcalidad64" '"protecta"
     
     'Valida Si Existe Nombre de la entrada para definir DSN de SisSin
     vgDsn = fgGetPrivateIni(lpAppName, "DSN", lpFileName)

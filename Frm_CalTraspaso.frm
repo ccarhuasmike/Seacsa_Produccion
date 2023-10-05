@@ -640,7 +640,9 @@ Function flInsertarBeneficiario()
     Sql = Sql & " ,NUM_CUENTA_CCI "
     Sql = Sql & " ,cod_tipcta, cod_monbco, num_ctabco "
     Sql = Sql & " ,gls_telben2 "
-   'FIN GCP-FRACTAL 04042019
+    'Inicio 02/10/2023-SMCCB
+    Sql = Sql & " ,COD_MODTIPOCUENTA_MANC , COD_TIPODOC_MANC, NUM_DOC_MANC, NOMBRE_MANC, APELLIDO_MANC "
+    'Fin 02/10/2023-SMCCB
      Sql = Sql & " ) VALUES ( "
     Sql = Sql & "'" & Trim(vgRs2!Num_Poliza) & "' , "
     Sql = Sql & " " & cgNumeroEndosoInicial & ", " '1
@@ -655,7 +657,7 @@ Function flInsertarBeneficiario()
     End If
     Sql = Sql & "'" & (vgRs!Gls_Direccion) & "',"
     Sql = Sql & " " & str(vgRs!Cod_Direccion) & ","
-    Sql = Sql & "'" & (vgRs2!gls_fono) & "',"
+    Sql = Sql & "'" & (vgRs2!GLS_FONO) & "',"
     Sql = Sql & "'" & (vgRs2!GLS_CORREO) & "',"
     Sql = Sql & "'" & (vgRs2!Cod_GruFam) & "',"
     Sql = Sql & "'" & (vgRs2!Cod_Par) & "',"
@@ -743,12 +745,18 @@ Function flInsertarBeneficiario()
         Sql = Sql & ", NULL "
     End If
    'FIN GCP-FRACTAL 04042019
-   
    Sql = Sql & ",'" & (vgRs2!gls_fono2) & "'"
+   'Inicio 02/10/2023-SMCCB
+    Sql = Sql & ",'" & (vgRs2!COD_MODTIPOCUENTA_MANC) & "'"
+    Sql = Sql & ",'" & (vgRs2!COD_TIPODOC_MANC) & "'"
+    Sql = Sql & ",'" & (vgRs2!NUM_DOC_MANC) & "'"
+    Sql = Sql & ",'" & (vgRs2!NOMBRE_MANC) & "'"
+    Sql = Sql & ",'" & (vgRs2!APELLIDO_MANC) & "'"
+    'Inicio 02/10/2023-SMCCB
     Sql = Sql & ") "
     vgConectarBD.Execute Sql
 
-
+  
     'hqr 14/09/2007 Se inserta certificado ficticio
     If vlCodEstPension <> clCodSinDerPen Then
         If vgRs2!Cod_Par >= 30 And vgRs2!Cod_Par <= 40 Then
@@ -914,7 +922,7 @@ Function flInsertarPoliza()
     Sql = Sql & " " & (vgRs!Num_Cargas) & " , "
     Sql = Sql & "'" & (vgRs!Fec_Vigencia) & "' , "
     Sql = Sql & "'" & clFechaTopeTer & "' , " '99991231
-    Sql = Sql & " " & str(vgRs!mto_priuni) & " , "
+    Sql = Sql & " " & str(vgRs!MTO_PRIUNI) & " , "
     Sql = Sql & " " & str(vgRs!Mto_Pension) & " , "
     Sql = Sql & " " & str(vgRs!Mto_PensionGar) & ", "
     Sql = Sql & " " & str(vgRs!Num_MesDif) & ", "

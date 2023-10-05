@@ -2075,7 +2075,7 @@ On Error GoTo Err_Limpiar
 
     Lbl_NumIdent = ""
     Lbl_TipoIdent = ""
-    Lbl_CUSPP = ""
+    Lbl_Cuspp = ""
     Lbl_NomAfiliado = ""
     Lbl_TipoPension = ""
     Lbl_TipoRenta = ""
@@ -2520,7 +2520,7 @@ On Error GoTo Err_buscaAnt
         Lbl_NumIdent = Trim(vlRegistro!num_idenafi)
         Lbl_TipoIdent = Trim(vlRegistro!GLS_TIPOIDENCOR)
         Lbl_NomAfiliado = Trim(vlRegistro!Gls_NomBen) + " " + Trim(vlRegistro!Gls_PatBen) + " " + IIf(IsNull(vlRegistro!Gls_MatBen), "", Trim(vlRegistro!Gls_MatBen))
-        Lbl_CUSPP = Trim(vlRegistro!Cod_Cuspp)
+        Lbl_Cuspp = Trim(vlRegistro!Cod_Cuspp)
         vlCodPar = Trim(vlRegistro!Cod_Par)
         vlafp = Trim(vlRegistro!Cod_AFP)
         
@@ -2989,9 +2989,7 @@ Function flTraspasarInformacion()
     Sql2 = Sql2 & " GLS_DIRTUT, COD_DIRECCION, GLS_FONOTUT, NUM_MESPODNOT, FEC_INIPODNOT, FEC_TERPODNOT, COD_VIAPAGO, COD_TIPCUENTA,"
     Sql2 = Sql2 & " COD_BANCO, NUM_CUENTA, COD_SUCURSAL, FEC_EFECTO, FEC_RECCIA, '" & vgUsuario & "', '" & vlFecModi & "', '" & vlHorModi & "','" & vgUsuario & "',"
     Sql2 = Sql2 & " FEC_MODI, HOR_MODI, GLS_CORREOTUT from PD_TMAE_oritutor where NUM_POLIZA='" & Trim(Txt_Poliza) & "'"
-
     vgConectarBD.Execute (Sql2)
-
     'Eliminar Datos de Tablas Originales
 '    Call flEliminarBonosOri
     Call flEliminarBeneficiariosOri
@@ -3544,7 +3542,10 @@ Function flGrabarBeneficiariosRec()
     Sql = Sql & "prc_pensionrep,mto_pension,mto_pensiongar,"
     'mvg 20170904
     Sql = Sql & "cod_usuariocrea,fec_crea,hor_crea,cod_estpension,prc_pensiongar, cod_tipcta , cod_monbco , Cod_Banco , num_ctabco,ind_bolElec, cod_nacionalidad, "
-    Sql = Sql & "NUM_CUENTA_CCI, gls_fono, gls_fono2, GLS_CORREO"
+    Sql = Sql & "NUM_CUENTA_CCI, gls_fono, gls_fono2, GLS_CORREO, "
+    'Inicio SMCCB 22/09/2023
+    Sql = Sql & "COD_MODTIPOCUENTA_MANC , COD_TIPODOC_MANC, NUM_DOC_MANC, NOMBRE_MANC, APELLIDO_MANC"
+    'Fin SMCCB 22/09/2023
     Sql = Sql & ") VALUES ("
     Sql = Sql & "'" & (vlRegistro3!Num_Poliza) & "',"
     Sql = Sql & " " & (vlEndoso) & ","
@@ -3653,6 +3654,13 @@ Function flGrabarBeneficiariosRec()
     Sql = Sql & ",'" & vlRegistro3!GLS_FONO & "' "
     Sql = Sql & ",'" & vlRegistro3!gls_fono2 & "' "
     Sql = Sql & ",'" & vlRegistro3!Gls_CorreoBen & "' "
+    'Inicio SMCCB 22/09/2023
+    Sql = Sql & ",'" & vlRegistro3!COD_MODTIPOCUENTA_MANC & "' "
+    Sql = Sql & ",'" & vlRegistro3!COD_TIPODOC_MANC & "' "
+    Sql = Sql & ",'" & vlRegistro3!NUM_DOC_MANC & "' "
+    Sql = Sql & ",'" & vlRegistro3!NOMBRE_MANC & "' "
+    Sql = Sql & ",'" & vlRegistro3!APELLIDO_MANC & "' "
+    'Fin SMCCB 22/09/2023
     Sql = Sql & ")"
     vgConectarBD.Execute (Sql)
 

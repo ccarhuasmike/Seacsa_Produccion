@@ -5,7 +5,7 @@ Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form Frm_CalConsulta 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Consulta Póliza"
-   ClientHeight    =   8175
+   ClientHeight    =   10050
    ClientLeft      =   1425
    ClientTop       =   1365
    ClientWidth     =   10650
@@ -13,7 +13,7 @@ Begin VB.Form Frm_CalConsulta
    MaxButton       =   0   'False
    MDIChild        =   -1  'True
    MinButton       =   0   'False
-   ScaleHeight     =   8175
+   ScaleHeight     =   10050
    ScaleWidth      =   10650
    Begin VB.CommandButton cmdPlanPol 
       Caption         =   "Plantilla de polizas"
@@ -28,7 +28,7 @@ Begin VB.Form Frm_CalConsulta
       Index           =   0
       Left            =   120
       TabIndex        =   118
-      Top             =   6960
+      Top             =   8880
       Width           =   10455
       Begin VB.CommandButton Cmd_Salir 
          Caption         =   "&Salir"
@@ -145,28 +145,26 @@ Begin VB.Form Frm_CalConsulta
       Width           =   840
    End
    Begin TabDlg.SSTab SSTab_Poliza 
-      Height          =   5295
+      Height          =   7215
       Left            =   120
       TabIndex        =   79
       Top             =   1680
       Width           =   10455
       _ExtentX        =   18441
-      _ExtentY        =   9340
+      _ExtentY        =   12726
       _Version        =   393216
-      Tab             =   1
       TabHeight       =   520
       Enabled         =   0   'False
       TabCaption(0)   =   "Datos del Afiliado"
       TabPicture(0)   =   "Frm_CalConsulta.frx":1528
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Fra_Afiliado"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "Datos de Cálculo"
       TabPicture(1)   =   "Frm_CalConsulta.frx":1544
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Fra_Calculo"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       TabCaption(2)   =   "Datos de Asegurados"
       TabPicture(2)   =   "Frm_CalConsulta.frx":1560
@@ -581,8 +579,8 @@ Begin VB.Form Frm_CalConsulta
          End
       End
       Begin VB.Frame Fra_Afiliado 
-         Height          =   4815
-         Left            =   -74880
+         Height          =   6735
+         Left            =   120
          TabIndex        =   73
          Top             =   360
          Width           =   10215
@@ -600,7 +598,7 @@ Begin VB.Form Frm_CalConsulta
             Height          =   285
             Left            =   5415
             TabIndex        =   215
-            Top             =   4470
+            Top             =   6390
             Width           =   255
          End
          Begin VB.Frame Fra_PagPension 
@@ -615,11 +613,96 @@ Begin VB.Form Frm_CalConsulta
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00800000&
-            Height          =   1815
+            Height          =   3735
             Left            =   5400
             TabIndex        =   92
             Top             =   2640
             Width           =   4455
+            Begin VB.TextBox Cmb_TipDoc 
+               BackColor       =   &H00E0FFFF&
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1440
+               TabIndex        =   226
+               Top             =   2160
+               Width           =   2835
+            End
+            Begin VB.TextBox Cmb_ModTipCta 
+               BackColor       =   &H00E0FFFF&
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1440
+               TabIndex        =   225
+               Top             =   1800
+               Width           =   2835
+            End
+            Begin VB.TextBox Txt_NroDocSecundario 
+               BackColor       =   &H00E0FFFF&
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1440
+               TabIndex        =   219
+               Top             =   2520
+               Width           =   2835
+            End
+            Begin VB.TextBox Txt_NombreSecundario 
+               BackColor       =   &H00E0FFFF&
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1440
+               TabIndex        =   218
+               Top             =   2835
+               Width           =   2835
+            End
+            Begin VB.TextBox Txt_ApellidosSecundario 
+               BackColor       =   &H00E0FFFF&
+               Enabled         =   0   'False
+               Height          =   285
+               Left            =   1440
+               TabIndex        =   217
+               Top             =   3195
+               Width           =   2835
+            End
+            Begin VB.Label Label10 
+               Caption         =   "Mod Tip Cuenta"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   224
+               Top             =   1800
+               Width           =   1215
+            End
+            Begin VB.Label Label11 
+               Caption         =   "Tip.Documento"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   223
+               Top             =   2160
+               Width           =   1215
+            End
+            Begin VB.Label Label12 
+               Caption         =   "Nro Doc."
+               Height          =   255
+               Left            =   120
+               TabIndex        =   222
+               Top             =   2520
+               Width           =   1215
+            End
+            Begin VB.Label Label13 
+               Caption         =   "Nombres"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   221
+               Top             =   2880
+               Width           =   1215
+            End
+            Begin VB.Label Label14 
+               Caption         =   "Apellidos"
+               Height          =   255
+               Left            =   120
+               TabIndex        =   220
+               Top             =   3240
+               Width           =   1095
+            End
             Begin VB.Label Lbl_NumCta 
                BackColor       =   &H00E0FFFF&
                BorderStyle     =   1  'Fixed Single
@@ -627,7 +710,7 @@ Begin VB.Form Frm_CalConsulta
                Left            =   960
                TabIndex        =   64
                Top             =   1425
-               Width           =   3255
+               Width           =   3340
             End
             Begin VB.Label Lbl_Bco 
                BackColor       =   &H00E0FFFF&
@@ -636,7 +719,7 @@ Begin VB.Form Frm_CalConsulta
                Left            =   960
                TabIndex        =   63
                Top             =   1125
-               Width           =   3255
+               Width           =   3340
             End
             Begin VB.Label Lbl_TipCta 
                BackColor       =   &H00E0FFFF&
@@ -645,7 +728,7 @@ Begin VB.Form Frm_CalConsulta
                Left            =   960
                TabIndex        =   62
                Top             =   825
-               Width           =   3255
+               Width           =   3340
             End
             Begin VB.Label Lbl_Suc 
                BackColor       =   &H00E0FFFF&
@@ -654,7 +737,7 @@ Begin VB.Form Frm_CalConsulta
                Left            =   960
                TabIndex        =   61
                Top             =   525
-               Width           =   3255
+               Width           =   3340
             End
             Begin VB.Label Lbl_ViaPago 
                BackColor       =   &H00E0FFFF&
@@ -663,7 +746,7 @@ Begin VB.Form Frm_CalConsulta
                Left            =   960
                TabIndex        =   60
                Top             =   225
-               Width           =   3255
+               Width           =   3340
             End
             Begin VB.Label Lbl_Nombre 
                Caption         =   "Sucursal"
@@ -716,7 +799,7 @@ Begin VB.Form Frm_CalConsulta
             Height          =   225
             Left            =   5700
             TabIndex        =   216
-            Top             =   4500
+            Top             =   6420
             Width           =   4080
          End
          Begin VB.Label lbl_asesor 
@@ -1227,7 +1310,7 @@ Begin VB.Form Frm_CalConsulta
       End
       Begin VB.Frame Fra_Calculo 
          Height          =   4815
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   80
          Top             =   360
          Width           =   10215
@@ -2328,13 +2411,15 @@ On Error GoTo Err_CargaAfi
     vlSql = vlSql & "p.gls_nacionalidad,n.cod_liquidacion, "
     vlSql = vlSql & "P.gls_telben2,c.num_idencor,c.gls_nomcor || ' ' ||  c.gls_patcor || ' ' || c.gls_matcor as gls_asesor " '---RRR 08/05/2013
     vlSql = vlSql & ",p.ind_bendes "
-    vlSql = vlSql & "FROM pd_tmae_poliza p,pd_tmae_polben b,ma_tpar_tipoiden i, "
-    vlSql = vlSql & "pd_tmae_polprirec n, pt_tmae_corredor c "
+    vlSql = vlSql & ",nvl(b.COD_MODTIPOCUENTA_MANC,'') as COD_MODTIPOCUENTA_MANC,nvl(b.COD_TIPODOC_MANC,'') as COD_TIPODOC_MANC,nvl(b.NUM_DOC_MANC,'') as NUM_DOC_MANC,nvl(b.NOMBRE_MANC,'')as NOMBRE_MANC,nvl(b.APELLIDO_MANC,'')as APELLIDO_MANC,nvl(i.gls_tipoidencor,'') as gls_tipoidencor_manc "
+    vlSql = vlSql & "FROM pd_tmae_poliza p "
+    vlSql = vlSql & "inner join pd_tmae_polben b on  p.num_poliza = b.num_poliza  AND p.num_endoso = b.num_endoso "
+    vlSql = vlSql & "inner join ma_tpar_tipoiden i on b.cod_tipoidenben = i.cod_tipoiden "
+    vlSql = vlSql & "inner join pd_tmae_polprirec n on p.num_poliza=n.num_poliza "
+    vlSql = vlSql & "inner join pt_tmae_corredor c on p.num_idencor=c.num_idencor "
+    vlSql = vlSql & "left join ma_tpar_tipoiden f on b.COD_TIPODOC_MANC = f.cod_tipoiden "
     vlSql = vlSql & "WHERE p.num_poliza = '" & iNumPol & "' "
     vlSql = vlSql & "AND p.num_endoso = " & inumend & " "
-    vlSql = vlSql & "AND p.num_poliza = b.num_poliza "
-    vlSql = vlSql & "AND p.num_endoso = b.num_endoso "
-    vlSql = vlSql & "AND b.cod_tipoidenben = i.cod_tipoiden AND p.num_poliza=n.num_poliza AND p.num_idencor=c.num_idencor "
     vlSql = vlSql & "AND b.cod_par = '99' "
     
     Set vgRs = vgConexionBD.Execute(vlSql)
@@ -2387,6 +2472,19 @@ On Error GoTo Err_CargaAfi
         Else
             vgTipoSucursal = cgTipoSucursalSuc
         End If
+        '09  SOBREVIVENCIA DE JUB. LEGAL
+        '10  SOBREVIVENCIA DE JUB. ANTICIPADA
+        '04  JUBILACION LEGAL - -habiltada
+        '05  JUBILACION ANTICIPADA - -habiltada
+        If vgRs!Cod_TipPension = "09" Or vgRs!Cod_TipPension = "10" Or vgRs!Cod_TipPension = "04" Or vgRs!Cod_TipPension = "05" Then
+            Call flBuscaCodGlosa(vgCodTabla_ModTipCta, (vgRs!COD_MODTIPOCUENTA_MANC))
+            Cmb_ModTipCta.Text = (vgRs!COD_MODTIPOCUENTA_MANC) + " - " + vlElemento
+            Cmb_TipDoc.Text = vgRs!gls_tipoidencor_manc
+            Txt_NroDocSecundario.Text = vgRs!NUM_DOC_MANC
+            Txt_NombreSecundario.Text = vgRs!NOMBRE_MANC
+            Txt_ApellidosSecundario.Text = vgRs!APELLIDO_MANC
+        End If
+        
         Call flBuscaGlosaSuc(vgRs!Cod_Sucursal)
         Lbl_Suc = (vgRs!Cod_Sucursal) + " - " + vlElemento
         Call flBuscaCodGlosa(vgCodTabla_TipCta, (vgRs!Cod_TipCuenta))
@@ -2527,7 +2625,7 @@ On Error GoTo Err_CarCalculo
         If Not IsNull(vgRs!Prc_TasaCe) Then Lbl_TasaCE = Format(vgRs!Prc_TasaCe, "#,#0.00")
         If Not IsNull(vgRs!Prc_TasaVta) Then Lbl_TasaVta = Format(vgRs!Prc_TasaVta, "#,#0.00")
         If Not IsNull(vgRs!Mto_PriUniDif) Then Lbl_MtoPrimaUniDif = Format(vgRs!Mto_PriUniDif, "#,#0.000000")
-        If Not IsNull(vgRs!Prc_TasaTir) Then Lbl_TasaTIR = Format(vgRs!Prc_TasaTir, "#,#0.00")
+        If Not IsNull(vgRs!Prc_TasaTir) Then Lbl_TasaTir = Format(vgRs!Prc_TasaTir, "#,#0.00")
         If Not IsNull(vgRs!Mto_CNU) Then Lbl_PrcFam = Format(vgRs!Mto_CNU, "#,#0.000000")
         If Not IsNull(vgRs!prc_tasapergar) Then Lbl_TasaPG = Format(vgRs!prc_tasapergar, "#,#0.00")
         If Not IsNull(vgRs!Mto_BonoFon) Then Lbl_BonoAct = Format(vgRs!Mto_BonoFon, "#,#0.00")
@@ -2946,7 +3044,7 @@ On Error GoTo Err_LimpiaCal
     Lbl_MtoPenGar = ""
     Lbl_TasaCE = ""
     Lbl_TasaVta = ""
-    Lbl_TasaTIR = ""
+    Lbl_TasaTir = ""
     Lbl_TasaPG = ""
     Lbl_BonoAct = ""
     Lbl_ApoAdi = ""
@@ -3588,13 +3686,13 @@ On Error GoTo Err_Form
         Lbl_BenSocial.Visible = False 'ABV 20/08/2007
         Lbl_TasaCE.Visible = False
         Lbl_TasaVta.Visible = False
-        Lbl_TasaTIR.Visible = False
+        Lbl_TasaTir.Visible = False
         Lbl_TasaPG.Visible = False
     Else
         Lbl_BenSocial.Visible = True 'ABV 20/08/2007
         Lbl_TasaCE.Visible = True
         Lbl_TasaVta.Visible = True
-        Lbl_TasaTIR.Visible = True
+        Lbl_TasaTir.Visible = True
         'Lbl_TasaPG.Visible = True 'ABV 04/11/2007
     End If
        
